@@ -1,15 +1,15 @@
-import textnode as tn
-import htmlnode as hn
+from textnode import TextNode
+from htmlnodes import HTMLNode
 
 
 def main():
-    text_node1 = tn.TextNode("Hello, world", "bold", None)
-    text_node2 = tn.TextNode("boot.dev", "italic", "https://boot.dev")
+    text_node1 = TextNode("Hello, world", "bold", None)
+    text_node2 = TextNode("boot.dev", "italic", "https://boot.dev")
 
     print(text_node1)
     print(text_node2)
 
-    htmlNode1 = hn.HTMLNode(
+    htmlNode1 = HTMLNode(
         "p", "Hello, world", None, {"style": "font-weight: bold"}
     )
 
