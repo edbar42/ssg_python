@@ -1,3 +1,4 @@
+# Modelling of HTML structures
 class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props={}):
         self.tag = tag
@@ -36,6 +37,16 @@ class LeafNode(HTMLNode):
 
         props_string = self.props_to_html()
         return f"<{self.tag}{props_string}>{self.value}</{self.tag}>"
+
+    def __eq__(self, target):
+        if not isinstance(target, LeafNode):
+            return False
+
+        return (
+            self.tag == target.tag
+            and self.value == target.value
+            and self.props == target.props
+        )
 
     def __repr__(self):
         return f"""
